@@ -1,0 +1,29 @@
+html,
+body,
+div#root {
+    height: 100% !important;
+}
+
+table {
+    margin-top: 10em;
+}
+
+.profile_img {
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+}
+
+.blockBtn {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    margin: 0.5em;
+}
+
+.unfBtn {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    margin: 0.5em;
+}

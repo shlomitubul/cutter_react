@@ -1,0 +1,18 @@
+body {
+    background-color: #ffffffd3;
+}
+
+#loginBtn {
+    background-color: rgb(0, 0, 0);
+    border-color: transparent;
+}
+
+#loginTitle {
+    color: black;
+}
+
+html,
+body,
+div#root {
+    height: 100% !important;
+}
