@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import Joi from "joi-browser";
-import "./Login.css";
 import Form from "../commons/Form";
+import style from "../Register/RegisterForm.css";
 
-class Login extends Form {
+class RegisterForm extends Form {
   state = {
     data: {
       username: "",
-      password: ""
+      password: "",
+      confirmPassword: ""
     },
     errors: {}
   };
@@ -19,9 +20,9 @@ class Login extends Form {
     password: Joi.string()
       .required()
       .min(8)
-      .label("Password")
+      .label("Password"),
+    confirmPassword: Joi.ref("password")
   };
-
   render() {
     return (
       <React.Fragment>
@@ -29,15 +30,16 @@ class Login extends Form {
           className="d-flex align-items-center flex-column justify-content-center h-100 text-white"
           id="header"
         >
-          <h1 id="loginTitle" className="display-1">
-            Wellcome to Cutter
+          <h1 id="registerTitle" className="display-1">
+            Let's Go (:
           </h1>
           <br />
           <form onSubmit={this.handlSubmit}>
             {this.renderInput("username")}
             {this.renderInput("password", "password")}
+            {this.renderInput("confirmPassword", "password")}
             <div className="form-group">
-              {this.renderButton("Login", { id: "loginBtn" })}
+              {this.renderButton("Register", { id: "registerBtn" })}
             </div>
           </form>
         </div>
@@ -45,4 +47,5 @@ class Login extends Form {
     );
   }
 }
-export default Login;
+
+export default RegisterForm;
