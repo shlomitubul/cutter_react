@@ -5,11 +5,14 @@ import { style } from "../MainTable/MainTable.css";
 import Pageination from "../MainTable/Pageination";
 import { paginate } from "../../../until/pager.js";
 import Filter from "./Filter.jsx";
+import { toast } from "react-toastify";
+import { getCurrerntUser } from "../../../services/authService.js";
 
 class InstaMainTable extends Component {
   state = {
     following: [],
     followers: [],
+    username: "",
 
     pageination: {
       totalFollowers: followersData.length,
@@ -24,6 +27,7 @@ class InstaMainTable extends Component {
   };
 
   render() {
+    toast.success("Welcome " + getCurrerntUser());
     const { following: _following } = this.state;
     const {
       pageination: { currentPage }
