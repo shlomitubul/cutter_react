@@ -27,15 +27,27 @@ class NavBar extends React.Component {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
+              <NavLink className="nav-link" to="/insgiht">
                 Insight-Tools
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Log-out
-              </NavLink>
-            </li>
+
+            {this.props.user && (
+              <React.Fragment>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/logout">
+                    Log-out
+                  </NavLink>
+                </li>
+              </React.Fragment>
+            )}
+            {!this.props.user && (
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/">
+                  Log-in
+                </NavLink>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

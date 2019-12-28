@@ -37,6 +37,9 @@ class Form extends Component {
 
     const errors = this.validate();
     this.setState({ errors: errors });
+    if (errors) return;
+
+    this.doSubmit();
   };
 
   handleChange = e => {
@@ -51,13 +54,13 @@ class Form extends Component {
     this.setState({ data, errors });
   };
 
-  renderButton = (label, buttonData) => (
+  renderButton = (label, classes = "", additionalFontHtml = null) => (
     <button
       disabled={this.validate()}
-      id={buttonData.id}
-      className="btn btn-info btn-lg btn-block"
+      className={classes + " btn  btn-lg btn-block text-monospace"}
     >
-      {label}
+      {label + " "}
+      {additionalFontHtml}
     </button>
   );
 

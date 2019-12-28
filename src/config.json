@@ -1,0 +1,9 @@
+{
+    "endPoints": {
+        "apiBase": "https://localhost:5001/api/",
+        "apiAuthBase": "https://localhost:5001/api/Authenticate",
+        "apiAuthLogin": "https://localhost:5001/api/Authenticate/login",
+        "apiInstagremOperationBase": "https://localhost:5001/api/Cutter",
+        "apiInstagremLogin": "https://localhost:5001/api/Cutter/LoginToInstagrem"
+    }
+}
